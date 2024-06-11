@@ -1,10 +1,7 @@
-import _ from "lodash"
-function component() {
-  const element = document.createElement("div")
-  element.innerHTML = _.join(["Hello", "webpack"], " ")
-  element.classList.add("hello")
-
-  return element
-}
-
-document.body.appendChild(component())
+import { invokeMainPageDom } from "./mainPage"
+import { invokeImages } from "../misMods/invokeImagesDom"
+import { slider } from "../slider/sliderDom"
+import "./index.css"
+invokeMainPageDom()
+slider()
+invokeImages()
