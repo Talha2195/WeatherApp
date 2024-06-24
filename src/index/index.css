@@ -1,5 +1,8 @@
 body {
-  background: url("../images/nightTime.png");
+  /* background: url("../images/nightTime.png"); */
+  --bg-color-light: #f0f0f0;
+  --bg-color-dark: #222;
+  background-color: var(--bg-color-light);
   background-repeat: no-repeat;
   background-size: 100%;
   text-align: center;
@@ -7,6 +10,7 @@ body {
   display: flex;
   flex-direction: column;
   height: 97vh;
+  transition: background-color 0.3s ease;
 }
 /*****************************************************************************************************************************/
 #mainDiv {
@@ -28,6 +32,7 @@ body {
   flex: 1 1 100px;
 }
 #searchBar {
+  color: white;
   font-size: 20px;
   border: none;
   outline: none;
@@ -91,6 +96,9 @@ body {
 }
 #darkModeSwitch:checked + #switchLabel {
   background: black;
+}
+#darkModeSwitch:checked ~ body {
+  background-color: var(--bg-color-dark);
 }
 #darkModeSwitch:checked + #switchLabel:after {
   left: 83px;
@@ -182,16 +190,4 @@ body {
   display: inline-block;
   transition: background-color 0.6s ease;
   margin-bottom: 2px;
-}
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-@keyframes fade {
-  from {
-    opacity: 0.4;
-  }
-  to {
-    opacity: 1;
-  }
 }
