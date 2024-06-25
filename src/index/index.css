@@ -1,8 +1,5 @@
 body {
-  /* background: url("../images/nightTime.png"); */
-  --bg-color-light: #f0f0f0;
-  --bg-color-dark: #222;
-  background-color: var(--bg-color-light);
+  background: url("../images/dayTime.png");
   background-repeat: no-repeat;
   background-size: 100%;
   text-align: center;
@@ -10,7 +7,18 @@ body {
   display: flex;
   flex-direction: column;
   height: 97vh;
+  z-index: -1;
   transition: background-color 0.3s ease;
+  color: black;
+}
+body.darkmode {
+  background: url("../images/nightTime.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+  color: white;
+}
+body.darkmode #searchBar {
+  color: white;
 }
 /*****************************************************************************************************************************/
 #mainDiv {
@@ -18,7 +26,6 @@ body {
   flex: 1;
   text-align: center;
   font-size: 24px;
-  color: white;
 }
 /*****************************************************************************************************************************/
 #mainDiv > div {
@@ -32,7 +39,6 @@ body {
   flex: 1 1 100px;
 }
 #searchBar {
-  color: white;
   font-size: 20px;
   border: none;
   outline: none;
@@ -97,9 +103,6 @@ body {
 #darkModeSwitch:checked + #switchLabel {
   background: black;
 }
-#darkModeSwitch:checked ~ body {
-  background-color: var(--bg-color-dark);
-}
 #darkModeSwitch:checked + #switchLabel:after {
   left: 83px;
   transform: translateX(-100%);
@@ -148,46 +151,4 @@ body {
 #footerDiv > #bottomDiv {
   border: 1px solid white;
   padding: 2em 0 2em 0;
-}
-#mainControlDiv {
-  border: 1px solid blueviolet;
-}
-#subControlDiv {
-  width: 10%;
-}
-#sliderContainer {
-  position: relative;
-  display: flex;
-  justify-content: space-around;
-  border: 1px solid white;
-}
-#sliderContainer > div {
-  color: white;
-  width: 15%;
-  display: flex;
-  border: 1px solid red;
-  justify-content: space-around;
-}
-#subControlDiv > span {
-  color: white;
-}
-#prev,
-#next {
-  cursor: pointer;
-  user-select: none;
-  color: white;
-}
-#prev:hover,
-#next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-.dot {
-  height: 10px;
-  width: 10px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s ease;
-  margin-bottom: 2px;
 }
